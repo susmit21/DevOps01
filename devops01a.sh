@@ -18,6 +18,12 @@ sysctl -n machdep.cpu.brand_string >> sysinfo
 printf "############ Memory Size #################\n\n" >> sysinfo
 sysctl hw.memsize >> sysinfo
 
+printf "############ MAC address ################\n\n" >> sysinfo
+ifconfig en0 | grep ether >> sysinfo
+
+printf "############ IP address #################\n\n" >> sysinfo
+ifconfig en0 | grep inet >> sysinfo
+
 }
 
 get_system_data
