@@ -15,6 +15,8 @@ sysctl -n hw.ncpu >> sysinfo
 printf "############ CPU Info ###################\n\n" >> sysinfo
 sysctl -n machdep.cpu.brand_string >> sysinfo
 
+printf "############ Memory Size #################\n\n" >> sysinfo
+sysctl hw.memsize >> sysinfo
 
 }
 
