@@ -12,6 +12,10 @@ df -h >> sysinfo
 printf "############ Number of CPUs ################\n\n" >> sysinfo
 sysctl -n hw.ncpu >> sysinfo
 
+printf "############ CPU Info ###################\n\n" >> sysinfo
+sysctl -n machdep.cpu.brand_string >> sysinfo
+
+
 }
 
 get_system_data
